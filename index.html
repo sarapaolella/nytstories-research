@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Semantic Flattening of Intimacy | Corpus Linguistics</title>
+    <title>Semantic Flattening of Intimacy | Corpus Linguistics Research</title>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <style>
-        /* --- PALETTE COLORI (Blu più brillanti) --- */
+        /* --- PALETTE COLORI (Blu più serio e accademico) --- */
         :root {
-            --primary-blue: #2563EB;       /* Blu Elettrico brillante */
-            --secondary-blue: #3B82F6;     /* Blu medio */
-            --light-blue: #EFF6FF;         /* Sfondo azzurrino chiarissimo */
-            --accent-blue: #60A5FA;        /* Accento celeste */
-            --text-dark: #1E293B;          /* Grigio scuro/bluastro per testo */
+            --primary-blue: #1a5f96;       /* Blu profondo, meno elettrico */
+            --secondary-blue: #347bad;     /* Blu medio per accenti */
+            --light-blue: #f0f6fa;         /* Sfondo azzurrino molto tenue */
+            --accent-blue: #5a9bd4;        /* Accento più chiaro */
+            --text-dark: #2c3e50;          /* Colore testo originale */
             --text-grey: #64748B;          /* Grigio medio */
             --white: #ffffff;
         }
@@ -27,19 +27,19 @@
             font-family: 'EB Garamond', serif;
             line-height: 1.8;
             color: var(--text-dark);
-            background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+            /* Gradiente di sfondo più leggero */
+            background: linear-gradient(135deg, #f5f8fa 0%, #ffffff 100%);
             padding: 40px 20px;
         }
         
         .container {
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
             background: var(--white);
             padding: 80px 90px;
-            /* Ombra più morbida e moderna */
-            box-shadow: 0 20px 80px rgba(37, 99, 235, 0.08); 
-            border-radius: 12px;
-            opacity: 0; /* Per animazione iniziale */
+            box-shadow: 0 15px 60px rgba(26, 95, 150, 0.08); 
+            border-radius: 8px;
+            opacity: 0;
             animation: fadeInPage 1s ease-out forwards;
         }
 
@@ -50,88 +50,130 @@
         
         /* --- HEADER --- */
         header {
-            border-bottom: 2px solid var(--light-blue);
+            border-bottom: 3px solid var(--primary-blue);
             padding-bottom: 45px;
             margin-bottom: 55px;
             text-align: center;
         }
         
         h1 {
-            font-size: 3em;
-            color: #111;
+            font-size: 2.8em;
+            color: #1a1a1a;
             margin-bottom: 20px;
             font-weight: 500;
-            letter-spacing: -1px;
-            line-height: 1.1;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
         }
         
         .subtitle {
-            font-size: 1.5em;
-            color: var(--text-grey);
+            font-size: 1.4em;
+            color: #555;
             font-style: italic;
-            margin-bottom: 20px;
-            line-height: 1.4;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .meta {
+            font-size: 1.05em;
+            color: var(--primary-blue);
+            margin-top: 15px;
+            font-weight: 600;
+            background: var(--light-blue);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 4px;
         }
         
         .nyt-credit {
-            display: inline-block;
+            display: block;
+            margin: 25px auto 0;
+            width: fit-content;
             background: #000;
             color: white;
-            padding: 8px 18px;
-            border-radius: 50px; /* Pill shape */
-            font-size: 0.85em;
-            margin-top: 18px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-weight: 500;
+            letter-spacing: 0.3px;
         }
 
-        /* --- TESTI E SEZIONI --- */
+        /* --- STILI GENERALI DEL TESTO --- */
         .section-block {
             margin-bottom: 60px;
         }
 
-        /* Stile Titoli Animati */
+        /* Stile H2 Animati */
         h2 {
-            font-size: 2.2em;
+            font-size: 2em;
             color: var(--primary-blue);
             margin-bottom: 25px;
             font-weight: 600;
-            border-left: 4px solid var(--accent-blue);
-            padding-left: 20px;
             position: relative;
             display: inline-block;
+            border-bottom: 2px solid var(--accent-blue);
+            padding-bottom: 5px;
         }
 
-        /* Animazione Typewriter (lettere singole) */
+        /* Animazione Typewriter */
         .typewriter-text span {
             opacity: 0;
             display: inline-block;
             animation: appear 0.05s forwards;
         }
+        @keyframes appear { to { opacity: 1; } }
 
-        @keyframes appear {
-            to { opacity: 1; }
+        h3 {
+            font-size: 1.4em;
+            color: #34495e;
+            margin: 40px 0 20px 0;
+            font-weight: 600;
         }
 
         p {
             margin-bottom: 22px;
             text-align: justify;
-            font-size: 1.15em;
-            color: #334155;
+            font-size: 1.1em;
+        }
+
+        ul {
+            margin: 25px 0 25px 40px;
+            font-size: 1.05em;
+        }
+        li {
+            margin-bottom: 14px;
+            line-height: 1.7;
+        }
+        strong {
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+        em {
+            color: var(--secondary-blue);
+            font-style: italic;
+        }
+
+        /* --- INTRO BOX --- */
+         .intro-text {
+            font-size: 1.1em;
+            margin: 30px 0 50px 0;
+            padding: 25px;
+            background: var(--light-blue);
+            border-left: 4px solid var(--primary-blue);
+            border-radius: 4px;
         }
         
         /* --- ACCORDION MINIMAL (Solo per Teoria) --- */
         .accordion-wrapper {
             margin: 40px 0;
-            border-top: 1px solid #e2e8f0;
-            border-bottom: 1px solid #e2e8f0;
+            border: 1px solid #dcebf7;
+            border-radius: 8px;
+            overflow: hidden;
         }
 
         .accordion-header {
-            background: transparent; /* Niente sfondo pesante */
+            background: var(--light-blue);
             color: var(--primary-blue);
-            padding: 20px 10px;
+            padding: 20px 25px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
@@ -140,21 +182,19 @@
         }
 
         .accordion-header:hover {
-            background: var(--light-blue);
-            padding-left: 20px; /* Piccolo movimento hover */
+            background: #e2effa;
         }
         
         .accordion-header h2 {
-            font-size: 1.8em;
+            font-size: 1.6em;
             margin: 0;
             padding: 0;
-            border: none; /* Rimuovo bordo laterale standard */
+            border: none;
         }
         
         .accordion-icon {
             font-size: 1.2em;
             transition: transform 0.3s ease;
-            color: var(--primary-blue);
         }
         
         .accordion-wrapper.active .accordion-icon {
@@ -164,76 +204,75 @@
         .accordion-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Animazione fluida */
-            padding: 0 10px;
+            transition: max-height 0.6s cubic-bezier(0.25, 1, 0.5, 1), padding 0.6s ease;
+            background: white;
         }
         
         .accordion-wrapper.active .accordion-content {
-            max-height: 3000px; /* Abbastanza alto per contenere tutto */
-            padding-top: 20px;
-            padding-bottom: 30px;
+            max-height: 4000px;
+            padding: 30px;
         }
 
-        /* --- ELEMENTI GRAFICI MIGLIORATI --- */
+        .theoretical-box {
+            background: #f8fbfd;
+            border: 1px solid #b8d4e8;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 6px;
+            font-size: 1em;
+        }
+        .theoretical-box h4 {
+            color: var(--primary-blue);
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        /* --- ELEMENTI GRAFICI --- */
         
         /* Box Dati */
         .data-box {
-            background: var(--white);
-            border: 2px solid var(--light-blue);
-            padding: 40px;
+            background: linear-gradient(135deg, var(--light-blue) 0%, #ffffff 100%);
+            border-left: 5px solid var(--primary-blue);
+            padding: 35px;
             margin: 40px 0;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.05); /* Soft shadow */
-            text-align: center;
-            transition: transform 0.3s ease;
+            border-radius: 6px;
+            box-shadow: 0 5px 25px rgba(26, 95, 150, 0.08);
         }
 
-        .data-box:hover {
-            transform: translateY(-5px);
-            border-color: var(--secondary-blue);
-        }
-        
         .stat-highlight {
-            font-size: 4em;
+            font-size: 3.5em;
             font-weight: 700;
-            background: -webkit-linear-gradient(45deg, var(--primary-blue), var(--accent-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent; /* Gradiente sul testo */
+            color: var(--primary-blue);
             display: block;
-            margin-bottom: 10px;
-            letter-spacing: -2px;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
         }
 
         /* Liste Parole */
         .word-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
             margin: 30px 0;
             font-family: 'Courier New', monospace;
         }
         
         .word-item {
-            background: #f8fafc;
-            padding: 12px 20px;
-            border-radius: 8px;
-            border-left: 3px solid var(--accent-blue);
+            background: white;
+            padding: 16px 24px;
+            border-radius: 6px;
+            border: 2px solid var(--light-blue);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
         }
         
         .word-item:hover {
-            background: var(--primary-blue);
-            color: white;
-            transform: scale(1.02);
-        }
-        .word-item:hover strong { color: white; }
-
-        .word-item strong {
-            color: var(--primary-blue);
-            font-weight: 700;
+            border-color: var(--primary-blue);
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(26, 95, 150, 0.1);
         }
 
         /* Box Demografici */
@@ -245,73 +284,68 @@
         
         .demo-card {
             flex: 1;
-            background: white;
-            border: 1px solid #e2e8f0;
+            background: linear-gradient(135deg, #ffffff 0%, var(--light-blue) 100%);
+            border: 2px solid var(--primary-blue);
             padding: 35px;
-            border-radius: 12px;
+            border-radius: 10px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-            position: relative;
-            overflow: hidden;
+            transition: all 0.3s ease;
         }
-        
-        /* Barretta colorata in alto */
-        .demo-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 6px;
-            background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue));
+        .demo-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(26, 95, 150, 0.15);
+        }
+        .demo-card h4 {
+            color: #34495e;
+            margin-bottom: 20px;
+            font-size: 1.25em;
+            font-weight: 600;
         }
 
         .percentage {
-            font-size: 3.5em;
+            font-size: 3em;
             color: var(--primary-blue);
             font-weight: 700;
-            margin: 10px 0;
-            line-height: 1;
+            margin: 15px 0;
+        }
+        .themes {
+            font-size: 1em;
+            color: #7f8c8d;
+            margin-top: 18px;
+            font-style: italic;
+            line-height: 1.6;
         }
 
         /* --- FOOTER --- */
         footer {
-            margin-top: 80px;
+            margin-top: 75px;
             padding-top: 40px;
-            border-top: 1px solid #ddd;
-            font-size: 0.95em;
-            color: var(--text-grey);
-            text-align: center;
+            border-top: 2px solid var(--light-blue);
+            font-size: 1em;
+            color: #95a5a6;
         }
         
+        .tags { margin-top: 30px; }
         .tag {
             display: inline-block;
-            background: var(--light-blue);
-            color: var(--primary-blue);
-            padding: 8px 16px;
-            margin: 5px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            font-weight: 600;
-            transition: all 0.2s;
-        }
-        
-        .tag:hover {
             background: var(--primary-blue);
             color: white;
+            padding: 8px 18px;
+            margin: 6px 6px 6px 0;
+            border-radius: 25px;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
         }
-
-        /* Theoretical Box styling (dentro l'accordion) */
-        .theoretical-box {
-            background: #fdfdfd;
-            border-left: 3px solid var(--secondary-blue);
-            padding: 20px 25px;
-            margin: 20px 0;
-            font-size: 1em;
+        .tag:hover {
+            background: var(--secondary-blue);
+            transform: translateY(-2px);
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .container { padding: 40px 25px; }
-            h1 { font-size: 2.2em; }
+            .container { padding: 45px 35px; }
+            h1 { font-size: 2em; }
+            .word-list { grid-template-columns: 1fr; }
             .demographic-box { flex-direction: column; }
         }
     </style>
@@ -322,23 +356,23 @@
         <header>
             <h1>Semantic Flattening of Intimacy During the Covid-19 Pandemic</h1>
             <p class="subtitle">A Corpus Linguistics Analysis of the New York Times "Tiny Love Stories" Column (2020–2021)</p>
+            <p class="meta">Research Project | Università degli Studi di Salerno, Umanistica Digitale per la Ricerca e l'impresa culturale | Sara Paolella</p>
             <span class="nyt-credit">📰 The New York Times | Published 2020</span>
         </header>
 
-        <div class="section-block">
-            <p><strong>Navigate the research:</strong> This study explores how the Covid-19 pandemic linguistically reshaped contemporary love narratives. Below you will find detailed findings, theoretical frameworks, and interpretive insights.</p>
+        <div class="intro-text">
+            <p><strong>Research Overview:</strong> This study explores how the Covid-19 pandemic linguistically reshaped contemporary love narratives. The following sections detail the findings, theoretical frameworks, and interpretive insights derived from a corpus analysis of reader-submitted stories.</p>
         </div>
 
         <div class="section-block">
             <h2 class="animate-type">Abstract</h2>
-            <p>This research employs computational corpus linguistics methodologies to investigate the impact of the Covid-19 pandemic on semantic diversity and lexical variability within contemporary short fiction. Through systematic analysis of reader-submitted narratives published in <em>The New York Times</em> "Tiny Love Stories" column during the critical first year of the global health emergency (February 2020–February 2021), this study identifies measurable patterns of lexical convergence and thematic repetition directly attributable to collective pandemic experience.</p>
+            <p>This research employs computational corpus linguistics methodologies to investigate the impact of the Covid-19 pandemic on semantic diversity and lexical variability within contemporary short fiction. Through systematic analysis of reader-submitted narratives published in <em>The New York Times</em> "Tiny Love Stories" column during the critical first year of the global health emergency (February 2020–February 2021), this study identifies measurable patterns of lexical convergence and thematic repetition directly attributable to collective pandemic experience. The findings demonstrate a quantifiable process of semantic flattening, wherein external historical pressures constrain narrative diversity and reduce the creative linguistic range typically associated with fictional discourse.</p>
         </div>
 
         <div class="section-block">
-            <h2 class="animate-type">Research Question</h2>
-            <p style="font-size: 1.3em; color: var(--primary-blue); font-weight: 500; font-style: italic;">
-                "How did the Covid-19 pandemic transform the language, thematic content, and semantic variability of short-form love narratives published during the first year of the global emergency?"
-            </p>
+            <h2 class="animate-type">Research Question and Genesis</h2>
+            <p>The genesis of this investigation lies in a sustained, longitudinal engagement with <em>The New York Times</em> "Tiny Love Stories" column as a cultural touchstone. Coincident with the onset of widespread pandemic lockdowns in early 2020, initial qualitative observations suggested a marked shift in the column's rhetorical landscape. Formerly characterized by narrative heterogeneity, submissions increasingly appeared to converge around a restricted set of thematic anchors and lexical choices, creating an impression of narrative uniformity despite diverse authorship.</p>
+            <p>This empirical observation prompted a formal analytical inquiry: To what extent did the collective trauma, spatial confinement, and environmental constraints of the Covid-19 pandemic exert a quantifiable homogenizing pressure on the linguistic expression of intimacy? Furthermore, what specific linguistic mechanisms reveal these processes of thematic convergence in the context of a shared global emergency?</p>
         </div>
 
         <div class="accordion-wrapper" id="theoryAccordion">
@@ -347,36 +381,56 @@
                 <span class="accordion-icon">▼</span>
             </div>
             <div class="accordion-content">
-                <div class="theoretical-box">
+                 <div class="theoretical-box">
                     <h4>Corpus Linguistics: Foundational Concepts</h4>
-                    <p>A <strong>corpus</strong> constitutes "a collection of pieces of language that are selected and ordered according to explicit linguistic criteria..." (Sinclair, 1996).</p>
+                    <p>A <strong>corpus</strong> constitutes "a collection of pieces of language that are selected and ordered according to explicit linguistic criteria in order to be used as a sample of the language" (Sinclair, 1996). In contemporary linguistic practice, a corpus represents a systematically compiled collection of sampled texts—written or spoken—in machine-readable format, potentially annotated with various forms of linguistic metadata. The annotation process, also termed <strong>tagging</strong>, constitutes a critical methodological step enabling computational analysis and pattern recognition.</p>
                 </div>
+
                 <div class="theoretical-box">
                     <h4>Tokens, Types, and Lexical Variability</h4>
-                    <p><strong>Tokens</strong> represent the total number of words. <strong>Types</strong> denote distinct lexical items. The <strong>Token-Type Ratio (TTR)</strong> provides a quantitative measure of lexical variability.</p>
+                    <p><strong>Tokens</strong> represent the total number of words in a corpus, counting each occurrence independently regardless of repetition. <strong>Types</strong> (also termed "graphic forms") denote distinct lexical items—unique words irrespective of frequency. For example, the phrase "sopra la panca la capra campa" contains five types (the article "la" repeated twice) and six tokens.</p>
+                    
+                    <p>The <strong>Token-Type Ratio (TTR)</strong> provides a quantitative measure of lexical variability within a text or corpus, calculated by dividing types by tokens and multiplying by 100. Higher TTR values indicate greater lexical diversity and creative vocabulary usage. As Laviosa (1998) identifies, TTR constitutes one of four primary indices for measuring lexical variety, alongside lexical density, frequency distribution patterns, and average sentence length. This ratio necessarily decreases as text length increases, as the introduction of novel lexemes occurs at a diminishing rate relative to lexical repetition.</p>
                 </div>
+
                 <div class="theoretical-box">
                     <h4>Collocational Analysis</h4>
-                    <p><strong>Collocates</strong> are words that co-occur with statistically significant frequency within proximate textual positions.</p>
+                    <p><strong>Collocates</strong> are words that co-occur with statistically significant frequency within proximate textual positions (e.g., "strong coffee"). Collocational analysis enables researchers to deduce semantic associations and contextual meanings through examination of lexical co-occurrence patterns, revealing the cultural and ideological frameworks embedded within linguistic usage.</p>
                 </div>
             </div>
         </div>
 
         <div class="section-block">
             <h2 class="animate-type">Corpus Description</h2>
-            <p>The analytical corpus comprises the complete archive of "Tiny Love Stories" published in <em>The New York Times</em> between February 2020 and February 2021—a twelve-month period capturing the critical initial phase of pandemic disruption.</p>
+            <p>The analytical corpus comprises the complete archive of "Tiny Love Stories" published in <em>The New York Times</em> between February 2020 and February 2021—a twelve-month period capturing the critical initial phase of pandemic disruption. Published three times weekly, the column features reader-submitted narratives exploring the vicissitudes of romantic and interpersonal love, each constrained to a maximum of 100 words. This formal limitation establishes a homogeneous narrative framework, facilitating rigorous comparative analysis across temporal and demographic variables while simultaneously intensifying the linguistic compression evident in pandemic-era submissions.</p>
+            
+            <p>The column's historical trajectory prior to the pandemic period was characterized by thematic originality and narrative experimentation. The pandemic's intrusion into lived experience, however, generated observable shifts in both content and linguistic structure—transformations this research seeks to quantify and interpret.</p>
         </div>
 
         <div class="section-block">
-            <h2 class="animate-type">Key Findings</h2>
+            <h2 class="animate-type">Methodology</h2>
+             <p>Analysis was conducted utilizing AntConc, specialized concordance software designed for corpus linguistic investigation. This research employs a <strong>corpus-driven</strong> methodology, investigating the corpus to identify emergent phenomena rather than testing predetermined hypotheses—an approach pioneered by Sinclair that privileges empirical observation over theoretical presupposition.</p>
+            
+            <p>The analytical framework encompassed three primary dimensions:</p>
+            <ul>
+                <li><strong>Token-Type Ratio (TTR) Calculation:</strong> Quantitative measurement of lexical variability and creative vocabulary deployment across the corpus</li>
+                <li><strong>Frequency Distribution Analysis:</strong> Identification and statistical evaluation of dominant lexical items, revealing patterns of linguistic convergence</li>
+                <li><strong>Collocational Pattern Examination:</strong> Analysis of recurring word combinations and contextual associations, illuminating thematic clusters and semantic fields</li>
+            </ul>
+        </div>
+
+        <div class="section-block">
+            <h2 class="animate-type">Findings</h2>
             
             <div class="data-box">
                 <span class="stat-highlight">34.71%</span>
-                <strong style="font-size: 1.2em; color: var(--text-grey);">Token-Type Ratio</strong>
-                <p style="margin-top: 14px; font-size: 1em;">Indicates moderate lexical creativity, substantially lower than benchmarks for fictional discourse. A quantifiable process of "semantic flattening".</p>
+                <strong>Token-Type Ratio</strong>
+                <p style="margin-top: 14px;">The TTR of 34.71% indicates moderate lexical creativity—a figure substantially lower than expected benchmarks for fictional discourse. This diminished ratio suggests constrained semantic range and reduced linguistic experimentation, attributable to the thematic convergence imposed by pandemic circumstances. While representing reasonable variability for constrained narrative forms, the figure nevertheless reflects the homogenizing pressure of shared traumatic experience.</p>
             </div>
 
-            <h3>Most Frequent Lexical Items</h3>
+            <h3>Lexical Convergence and Frequency Analysis</h3>
+            <p>Frequency analysis reveals pronounced predominance of first-person pronouns, consistent with the column's narrative conventions. However, the subsequent ranking demonstrates pandemic-specific lexical convergence. The ten most frequent lexical items construct a linguistic architecture of isolation, digital mediation, and domestic confinement:</p>
+            
             <div class="word-list">
                 <div class="word-item"><span>1. I</span> <strong>270</strong></div>
                 <div class="word-item"><span>2. the</span> <strong>198</strong></div>
@@ -385,55 +439,88 @@
                 <div class="word-item"><span>5. love</span> <strong>160</strong></div>
                 <div class="word-item"><span>6. they</span> <strong>132</strong></div>
                 <div class="word-item"><span>7. pandemic</span> <strong>127</strong></div>
-                <div class="word-item"><span>8. home</span> <strong>101</strong></div>
-                <div class="word-item"><span>9. zoom</span> <strong>95</strong></div>
-                <div class="word-item"><span>10. covid</span> <strong>5</strong></div>
+                <div class="word-item"><span>8. his</span> <strong>121</strong></div>
+                <div class="word-item"><span>9. home</span> <strong>101</strong></div>
+                <div class="word-item"><span>10. zoom</span> <strong>95</strong></div>
             </div>
-        </div>
 
-        <div class="section-block">
-            <h2 class="animate-type">Generational Divergence</h2>
+            <p>Significantly, the lexeme <em>love</em>—ostensibly central to the column's thematic focus—appears predominantly within fixed phrasal constructions ("to fall in love," "to be in love with") rather than as an independent nominal form. This pattern suggests reduced semantic flexibility and diminished creative lexical deployment, consistent with broader patterns of linguistic convergence.</p>
+
+            <p>The commercial platform <em>Zoom</em> achieves lexical prominence, functioning synecdochically to represent the entirety of digitally-mediated interpersonal connection during lockdown periods—a corporate brand name transformed into universal signifier of pandemic-era intimacy.</p>
+
+            <h3>Pandemic Lexicon and Euphemistic Displacement</h3>
+            <p>Despite the centrality of Covid-19 to narrative context, the explicit term <em>covid</em> appears merely five times across the entire corpus. Authors demonstrate marked preference for indirect lexical references: <em>pandemic</em> (appearing as the 7th most frequent word), <em>quarantine</em>, and <em>hospital</em>. This pattern indicates a tendency toward euphemistic or generalized pandemic terminology, suggesting potential psychological distancing mechanisms wherein direct nominalization of the virus proves linguistically or emotionally prohibitive.</p>
+
+            <h3>Spatial Configurations and Collocational Patterns</h3>
+            <p>Collocational analysis foregrounds the dominance of domestic and formerly-public spaces. The term <em>home</em> recurs 13 times, establishing domestic interiors as the near-universal narrative setting. The lexeme <em>coffee</em> appears frequently, most commonly within the collocation "coffee shop," embedded in nostalgic descriptions of closed public venues: "the bars, the restaurant, and the coffee shop closed"—a formulation repeated with striking regularity across submissions.</p>
+            
+            <p>This spatial convergence reflects material constraints on social interaction during lockdown periods, wherein domestic space simultaneously functioned as refuge and confinement, while public gathering places persisted solely as sites of memory and longing.</p>
+
+            <h3>Cultural Specificity and Diasporic Experience</h3>
+            <p>Food-related terminology demonstrates unexpected patterns of cultural specificity. Non-American culinary lexemes—particularly those denoting Indian cuisine such as <em>curry</em> and <em>masala</em>—appear with notable frequency. The proper noun <em>India</em> occurs seven times, indicating substantial representation of authors with Indian heritage or diasporic connections. These references frequently co-occur with verbs expressing absence and nostalgia (<em>miss</em>, <em>remember</em>), suggesting intensified longing for geographic and cultural origins during pandemic isolation—a doubling of displacement wherein physical lockdown exacerbates existing diasporic separation.</p>
+
+            <h3>Generational Divergence in Intimate Vocabulary</h3>
             <div class="demographic-box">
                 <div class="demo-card">
                     <h4>Age 18–35</h4>
                     <div class="percentage">62.5%</div>
-                    <p class="themes">Elevated frequency of sexuality-related terminology and LGBTQ+ identity lexemes.</p>
+                    <p class="themes">Elevated frequency of sexuality-related terminology and LGBTQ+ identity lexemes</p>
                 </div>
                 <div class="demo-card">
                     <h4>Age 50–75</h4>
                     <div class="percentage">37.5%</div>
-                    <p class="themes">Traditional romantic vocabulary predominance ("date", "love"); absence of LGBTQ+ terminology.</p>
+                    <p class="themes">Traditional romantic vocabulary predominance: "date," "love"; absence of LGBTQ+ terminology</p>
                 </div>
             </div>
+
+            <p>Demographic analysis reveals significant generational lexical divergence. Younger contributors (18–35 years) demonstrate substantially elevated usage of explicit sexuality-related terms (<em>sex</em> appearing frequently) compared to submissions from authors aged 50+. Most striking is the generational divide in LGBTQ+ vocabulary deployment: terms such as <em>gay</em> and <em>lesbian</em> appear regularly in younger authors' work while remaining entirely absent from older contributors' narratives. This pattern illuminates divergent frameworks for articulating intimate experience across generational cohorts, with younger writers employing more expansive and identity-specific lexicons while older authors default to conventional romantic terminology (<em>love</em>, <em>date</em>).</p>
         </div>
 
         <div class="section-block">
-            <h2 class="animate-type">Conclusion</h2>
-            <p>The quantitative evidence compellingly demonstrates a process of <strong>semantic flattening</strong>. The pandemic functioned as a centripetal force, compressing the semantic field. In pandemic conditions, even the grammar of love contracts.</p>
+            <h2 class="animate-type">Interpretation and Conclusions</h2>
+            <p>The quantitative evidence compellingly demonstrates a process of <strong>semantic flattening</strong>—a measurable reduction in narrative and lexical diversity directly attributable to external historical pressure. The Covid-19 pandemic functioned as a centripetal force, compressing the semantic field within which authors operated and constraining creative linguistic range.</p>
+            
+            <p>This phenomenon manifests linguistically through several observable mechanisms:</p>
+            <ul>
+                <li><strong>Thematic Convergence:</strong> Narratives coalesce around a restricted set of pandemic-related experiences—isolation, digital mediation, domestic confinement, nostalgia for public spaces</li>
+                <li><strong>Lexical Repetition:</strong> Elevated frequency of pandemic-specific terminology (<em>Zoom</em>, <em>pandemic</em>, <em>quarantine</em>, <em>home</em>) across corpus</li>
+                <li><strong>Reduced Semantic Flexibility:</strong> Diminished TTR and prevalence of fixed phrasal constructions indicate constrained creative vocabulary deployment</li>
+                <li><strong>Spatial Restriction:</strong> Narrative settings converge overwhelmingly on domestic interiors, reflecting material constraints on movement and social interaction</li>
+            </ul>
+            
+            <p>These patterns constitute the textual manifestation of collective trauma and universalized experience. The pandemic's compression of lived experience into domestic spaces, the ubiquity of digital communication platforms, and the omnipresence of health emergency discourse collectively generated a constrained semantic field within which authors necessarily operated. While individual narratives retain personal significance and emotional authenticity, the corpus collectively exhibits markedly reduced variability—a linguistic echo of the pandemic's homogenizing effect on quotidian existence.</p>
+            
+            <p>The research thus illuminates how extraordinary historical circumstances inscribe themselves within language itself, constraining not merely what stories are told, but the very lexical and syntactic structures through which intimacy can be articulated. In pandemic conditions, even the grammar of love contracts.</p>
         </div>
 
         <footer>
+            <p><strong>Methodology and Attribution</strong></p>
+            <p>Corpus analysis conducted utilizing AntConc concordance software. Research design, analytical procedures, and interpretive framework developed by Sara Paolella.</p>
+            <p style="margin-top: 18px; font-style: italic;">Illustrations reproduced from <em>The New York Times</em> "Tiny Love Stories" column (2020), visually representing emergent themes: social distancing, domestic isolation, digital connection, and the yearning for physical proximity.</p>
+            
             <div class="tags">
                 <span class="tag">Digital Humanities</span>
                 <span class="tag">Corpus Linguistics</span>
                 <span class="tag">Cultural Analysis</span>
+                <span class="tag">Covid-19 Studies</span>
+                <span class="tag">Computational Literary Studies</span>
                 <span class="tag">Semantic Analysis</span>
+                <span class="tag">Narrative Theory</span>
             </div>
-            <p style="margin-top:20px;">Research Project by Sara Paolella</p>
         </footer>
     </div>
 
     <script>
-        // 1. GESTIONE ACCORDION (Solo per quello rimasto)
+        // 1. GESTIONE ACCORDION (Solo per quello rimasto della teoria)
         const theoryAccordion = document.getElementById('theoryAccordion');
-        const header = theoryAccordion.querySelector('.accordion-header');
-        
-        header.addEventListener('click', () => {
-            theoryAccordion.classList.toggle('active');
-        });
+        if (theoryAccordion) {
+            const header = theoryAccordion.querySelector('.accordion-header');
+            header.addEventListener('click', () => {
+                theoryAccordion.classList.toggle('active');
+            });
+        }
 
-        // 2. ANIMAZIONE MACCHINA DA SCRIVERE (Typewriter)
-        // Seleziona tutti gli H2 che hanno la classe 'animate-type'
+        // 2. ANIMAZIONE MACCHINA DA SCRIVERE (Typewriter) sugli H2
         const titles = document.querySelectorAll('.animate-type');
 
         const observer = new IntersectionObserver((entries) => {
@@ -442,20 +529,21 @@
                     const h2 = entry.target;
                     const text = h2.innerText;
                     h2.innerHTML = ''; // Svuota il testo
-                    h2.classList.add('typewriter-text'); // Aggiunge stile cursore se serve
+                    h2.classList.add('typewriter-text');
 
-                    // Crea uno span per ogni lettera con un ritardo incrementale
+                    // Crea uno span per ogni lettera con un ritardo
                     [...text].forEach((char, index) => {
                         const span = document.createElement('span');
                         span.textContent = char;
-                        span.style.animationDelay = `${index * 0.05}s`; // Velocità apparizione
+                        // Velocità leggermente aumentata per titoli lunghi
+                        span.style.animationDelay = `${index * 0.04}s`; 
                         h2.appendChild(span);
                     });
                     
-                    observer.unobserve(h2); // Esegui l'animazione solo una volta
+                    observer.unobserve(h2);
                 }
             });
-        }, { threshold: 0.5 }); // L'animazione parte quando l'elemento è visibile al 50%
+        }, { threshold: 0.5 });
 
         titles.forEach(title => observer.observe(title));
     </script>
