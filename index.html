@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic Flattening of Intimacy | Corpus Linguistics</title>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* --- PALETTE COLORI (Blu più brillanti) --- */
+        :root {
+            --primary-blue: #2563EB;       /* Blu Elettrico brillante */
+            --secondary-blue: #3B82F6;     /* Blu medio */
+            --light-blue: #EFF6FF;         /* Sfondo azzurrino chiarissimo */
+            --accent-blue: #60A5FA;        /* Accento celeste */
+            --text-dark: #1E293B;          /* Grigio scuro/bluastro per testo */
+            --text-grey: #64748B;          /* Grigio medio */
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'EB Garamond', serif;
+            line-height: 1.8;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 80px 90px;
+            /* Ombra più morbida e moderna */
+            box-shadow: 0 20px 80px rgba(37, 99, 235, 0.08); 
+            border-radius: 12px;
+            opacity: 0; /* Per animazione iniziale */
+            animation: fadeInPage 1s ease-out forwards;
+        }
+
+        @keyframes fadeInPage {
+            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; transform: translateY(20px); }
+        }
+        
+        /* --- HEADER --- */
+        header {
+            border-bottom: 2px solid var(--light-blue);
+            padding-bottom: 45px;
+            margin-bottom: 55px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 3em;
+            color: #111;
+            margin-bottom: 20px;
+            font-weight: 500;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+        
+        .subtitle {
+            font-size: 1.5em;
+            color: var(--text-grey);
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+        
+        .nyt-credit {
+            display: inline-block;
+            background: #000;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 50px; /* Pill shape */
+            font-size: 0.85em;
+            margin-top: 18px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* --- TESTI E SEZIONI --- */
+        .section-block {
+            margin-bottom: 60px;
+        }
+
+        /* Stile Titoli Animati */
+        h2 {
+            font-size: 2.2em;
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+            font-weight: 600;
+            border-left: 4px solid var(--accent-blue);
+            padding-left: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Animazione Typewriter (lettere singole) */
+        .typewriter-text span {
+            opacity: 0;
+            display: inline-block;
+            animation: appear 0.05s forwards;
+        }
+
+        @keyframes appear {
+            to { opacity: 1; }
+        }
+
+        p {
+            margin-bottom: 22px;
+            text-align: justify;
+            font-size: 1.15em;
+            color: #334155;
+        }
+        
+        /* --- ACCORDION MINIMAL (Solo per Teoria) --- */
+        .accordion-wrapper {
+            margin: 40px 0;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .accordion-header {
+            background: transparent; /* Niente sfondo pesante */
+            color: var(--primary-blue);
+            padding: 20px 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background: var(--light-blue);
+            padding-left: 20px; /* Piccolo movimento hover */
+        }
+        
+        .accordion-header h2 {
+            font-size: 1.8em;
+            margin: 0;
+            padding: 0;
+            border: none; /* Rimuovo bordo laterale standard */
+        }
+        
+        .accordion-icon {
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+            color: var(--primary-blue);
+        }
+        
+        .accordion-wrapper.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Animazione fluida */
+            padding: 0 10px;
+        }
+        
+        .accordion-wrapper.active .accordion-content {
+            max-height: 3000px; /* Abbastanza alto per contenere tutto */
+            padding-top: 20px;
+            padding-bottom: 30px;
+        }
+
+        /* --- ELEMENTI GRAFICI MIGLIORATI --- */
+        
+        /* Box Dati */
+        .data-box {
+            background: var(--white);
+            border: 2px solid var(--light-blue);
+            padding: 40px;
+            margin: 40px 0;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.05); /* Soft shadow */
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .data-box:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary-blue);
+        }
+        
+        .stat-highlight {
+            font-size: 4em;
+            font-weight: 700;
+            background: -webkit-linear-gradient(45deg, var(--primary-blue), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; /* Gradiente sul testo */
+            display: block;
+            margin-bottom: 10px;
+            letter-spacing: -2px;
+        }
+
+        /* Liste Parole */
+        .word-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .word-item {
+            background: #f8fafc;
+            padding: 12px 20px;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-blue);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s ease;
+        }
+        
+        .word-item:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: scale(1.02);
+        }
+        .word-item:hover strong { color: white; }
+
+        .word-item strong {
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+
+        /* Box Demografici */
+        .demographic-box {
+            display: flex;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .demo-card {
+            flex: 1;
+            background: white;
+            border: 1px solid #e2e8f0;
+            padding: 35px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Barretta colorata in alto */
+        .demo-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue));
+        }
+
+        .percentage {
+            font-size: 3.5em;
+            color: var(--primary-blue);
+            font-weight: 700;
+            margin: 10px 0;
+            line-height: 1;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid #ddd;
+            font-size: 0.95em;
+            color: var(--text-grey);
+            text-align: center;
+        }
+        
+        .tag {
+            display: inline-block;
+            background: var(--light-blue);
+            color: var(--primary-blue);
+            padding: 8px 16px;
+            margin: 5px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        
+        .tag:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        /* Theoretical Box styling (dentro l'accordion) */
+        .theoretical-box {
+            background: #fdfdfd;
+            border-left: 3px solid var(--secondary-blue);
+            padding: 20px 25px;
+            margin: 20px 0;
+            font-size: 1em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container { padding: 40px 25px; }
+            h1 { font-size: 2.2em; }
+            .demographic-box { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Semantic Flattening of Intimacy During the Covid-19 Pandemic</h1>
+            <p class="subtitle">A Corpus Linguistics Analysis of the New York Times "Tiny Love Stories" Column (2020–2021)</p>
+            <span class="nyt-credit">📰 The New York Times | Published 2020</span>
+        </header>
+
+        <div class="section-block">
+            <p><strong>Navigate the research:</strong> This study explores how the Covid-19 pandemic linguistically reshaped contemporary love narratives. Below you will find detailed findings, theoretical frameworks, and interpretive insights.</p>
+        </div>
+
+        <div class="section-block">
+            <h2 class="animate-type">Abstract</h2>
+            <p>This research employs computational corpus linguistics methodologies to investigate the impact of the Covid-19 pandemic on semantic diversity and lexical variability within contemporary short fiction. Through systematic analysis of reader-submitted narratives published in <em>The New York Times</em> "Tiny Love Stories" column during the critical first year of the global health emergency (February 2020–February 2021), this study identifies measurable patterns of lexical convergence and thematic repetition directly attributable to collective pandemic experience.</p>
+        </div>
+
+        <div class="section-block">
+            <h2 class="animate-type">Research Question</h2>
+            <p style="font-size: 1.3em; color: var(--primary-blue); font-weight: 500; font-style: italic;">
+                "How did the Covid-19 pandemic transform the language, thematic content, and semantic variability of short-form love narratives published during the first year of the global emergency?"
+            </p>
+        </div>
+
+        <div class="accordion-wrapper" id="theoryAccordion">
+            <div class="accordion-header">
+                <h2>Theoretical Framework</h2>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <div class="theoretical-box">
+                    <h4>Corpus Linguistics: Foundational Concepts</h4>
+                    <p>A <strong>corpus</strong> constitutes "a collection of pieces of language that are selected and ordered according to explicit linguistic criteria..." (Sinclair, 1996).</p>
+                </div>
+                <div class="theoretical-box">
+                    <h4>Tokens, Types, and Lexical Variability</h4>
+                    <p><strong>Tokens</strong> represent the total number of words. <strong>Types</strong> denote distinct lexical items. The <strong>Token-Type Ratio (TTR)</strong> provides a quantitative measure of lexical variability.</p>
+                </div>
+                <div class="theoretical-box">
+                    <h4>Collocational Analysis</h4>
+                    <p><strong>Collocates</strong> are words that co-occur with statistically significant frequency within proximate textual positions.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-block">
+            <h2 class="animate-type">Corpus Description</h2>
+            <p>The analytical corpus comprises the complete archive of "Tiny Love Stories" published in <em>The New York Times</em> between February 2020 and February 2021—a twelve-month period capturing the critical initial phase of pandemic disruption.</p>
+        </div>
+
+        <div class="section-block">
+            <h2 class="animate-type">Key Findings</h2>
+            
+            <div class="data-box">
+                <span class="stat-highlight">34.71%</span>
+                <strong style="font-size: 1.2em; color: var(--text-grey);">Token-Type Ratio</strong>
+                <p style="margin-top: 14px; font-size: 1em;">Indicates moderate lexical creativity, substantially lower than benchmarks for fictional discourse. A quantifiable process of "semantic flattening".</p>
+            </div>
+
+            <h3>Most Frequent Lexical Items</h3>
+            <div class="word-list">
+                <div class="word-item"><span>1. I</span> <strong>270</strong></div>
+                <div class="word-item"><span>2. the</span> <strong>198</strong></div>
+                <div class="word-item"><span>3. to</span> <strong>174</strong></div>
+                <div class="word-item"><span>4. you</span> <strong>172</strong></div>
+                <div class="word-item"><span>5. love</span> <strong>160</strong></div>
+                <div class="word-item"><span>6. they</span> <strong>132</strong></div>
+                <div class="word-item"><span>7. pandemic</span> <strong>127</strong></div>
+                <div class="word-item"><span>8. home</span> <strong>101</strong></div>
+                <div class="word-item"><span>9. zoom</span> <strong>95</strong></div>
+                <div class="word-item"><span>10. covid</span> <strong>5</strong></div>
+            </div>
+        </div>
+
+        <div class="section-block">
+            <h2 class="animate-type">Generational Divergence</h2>
+            <div class="demographic-box">
+                <div class="demo-card">
+                    <h4>Age 18–35</h4>
+                    <div class="percentage">62.5%</div>
+                    <p class="themes">Elevated frequency of sexuality-related terminology and LGBTQ+ identity lexemes.</p>
+                </div>
+                <div class="demo-card">
+                    <h4>Age 50–75</h4>
+                    <div class="percentage">37.5%</div>
+                    <p class="themes">Traditional romantic vocabulary predominance ("date", "love"); absence of LGBTQ+ terminology.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-block">
+            <h2 class="animate-type">Conclusion</h2>
+            <p>The quantitative evidence compellingly demonstrates a process of <strong>semantic flattening</strong>. The pandemic functioned as a centripetal force, compressing the semantic field. In pandemic conditions, even the grammar of love contracts.</p>
+        </div>
+
+        <footer>
+            <div class="tags">
+                <span class="tag">Digital Humanities</span>
+                <span class="tag">Corpus Linguistics</span>
+                <span class="tag">Cultural Analysis</span>
+                <span class="tag">Semantic Analysis</span>
+            </div>
+            <p style="margin-top:20px;">Research Project by Sara Paolella</p>
+        </footer>
+    </div>
+
+    <script>
+        // 1. GESTIONE ACCORDION (Solo per quello rimasto)
+        const theoryAccordion = document.getElementById('theoryAccordion');
+        const header = theoryAccordion.querySelector('.accordion-header');
+        
+        header.addEventListener('click', () => {
+            theoryAccordion.classList.toggle('active');
+        });
+
+        // 2. ANIMAZIONE MACCHINA DA SCRIVERE (Typewriter)
+        // Seleziona tutti gli H2 che hanno la classe 'animate-type'
+        const titles = document.querySelectorAll('.animate-type');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const h2 = entry.target;
+                    const text = h2.innerText;
+                    h2.innerHTML = ''; // Svuota il testo
+                    h2.classList.add('typewriter-text'); // Aggiunge stile cursore se serve
+
+                    // Crea uno span per ogni lettera con un ritardo incrementale
+                    [...text].forEach((char, index) => {
+                        const span = document.createElement('span');
+                        span.textContent = char;
+                        span.style.animationDelay = `${index * 0.05}s`; // Velocità apparizione
+                        h2.appendChild(span);
+                    });
+                    
+                    observer.unobserve(h2); // Esegui l'animazione solo una volta
+                }
+            });
+        }, { threshold: 0.5 }); // L'animazione parte quando l'elemento è visibile al 50%
+
+        titles.forEach(title => observer.observe(title));
+    </script>
+</body>
+</html>
